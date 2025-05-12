@@ -6,4 +6,8 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   site: "https://lightningwave.github.io",
   integrations: [mdx(), sitemap(), tailwind()],
+  output: 'static',
+  build: {
+    format: 'directory'
+  }
 });
