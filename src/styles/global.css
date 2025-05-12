@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  overflow-y: scroll;
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+html,
+body {
+  @apply size-full;
+}
+
+body {
+  @apply font-sans antialiased;
+  @apply flex flex-col;
+  @apply bg-stone-100 dark:bg-[#0D1117];
+  @apply text-black/50 dark:text-[#C9D1D9];
+}
+
+header {
+  @apply fixed top-0 left-0 right-0 z-50 py-5;
+  @apply bg-stone-100/75 dark:bg-[#010409];
+  @apply backdrop-blur-sm saturate-200;
+  @apply border-b border-black/10 dark:border-[#30363D];
+  @apply shadow-[0_1px_0_0_rgba(255,255,255,0.1)];
+}
+
+main {
+  @apply flex-1 py-32;
+}
+
+footer {
+  @apply py-5 text-sm;
+  @apply border-t border-black/10 dark:border-[#30363D];
+}
+
+article {
+  @apply max-w-full prose dark:prose-invert prose-img:mx-auto prose-img:my-auto;
+  @apply prose-headings:font-semibold prose-p:font-serif;
+  @apply prose-headings:text-black prose-headings:dark:text-[#C9D1D9];
+  @apply prose-a:text-black prose-a:dark:text-[#58A6FF];
+  @apply prose-strong:text-black prose-strong:dark:text-[#58A6FF];
+  @apply prose-code:text-black prose-code:dark:text-[#C9D1D9];
+}
+
+@layer utilities {
+  article a {
+    @apply font-sans text-current underline underline-offset-2;
+    @apply decoration-black/15 dark:decoration-[#58A6FF]/40;
+    @apply transition-colors duration-300 ease-in-out;
+  }
+  article a:hover {
+    @apply text-black dark:text-[#58A6FF];
+    @apply decoration-black/25 dark:decoration-[#58A6FF]/60;
+  }
+}
+
+.animate {
+  @apply opacity-0 translate-y-3;
+  @apply transition-all duration-700 ease-out;
+}
+
+.animate.show {
+  @apply opacity-100 translate-y-0;
+}
+
+html #back-to-top {
+  @apply opacity-0 pointer-events-none;
+}
+
+html.scrolled #back-to-top {
+  @apply opacity-100 pointer-events-auto;
+}
+
+/* GitHub-like styles */
+.dark .bg-black\/5 {
+  @apply bg-[#161B22];
+}
+
+.dark .border-black\/15 {
+  @apply border-[#30363D];
+}
+
+.dark .hover\:bg-black\/5:hover {
+  @apply hover:bg-[#161B22];
+}
+
+.dark .hover\:border-black\/15:hover {
+  @apply hover:border-[#8B949E];
+}
+
+/* Custom scrollbar for dark mode */
+.dark ::-webkit-scrollbar {
+  @apply w-2;
+}
+
+.dark ::-webkit-scrollbar-track {
+  @apply bg-[#0D1117];
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  @apply bg-[#30363D] rounded-full;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  @apply bg-[#8B949E];
+}
+
+/* GitHub-like selection */
+.dark ::selection {
+  @apply bg-[#1F6FEB] text-[#C9D1D9];
+}
+
+/* GitHub-like card styles */
+.dark .github-card {
+  @apply bg-[#161B22] border border-[#30363D];
+  @apply hover:border-[#8B949E] transition-all duration-300;
+  @apply shadow-[0_1px_3px_rgba(0,0,0,0.12)];
+  @apply hover:shadow-[0_4px_12px_rgba(0,0,0,0.2)];
+  @apply transform hover:-translate-y-1;
+}
+
+/* GitHub-like button styles */
+.dark .github-button {
+  @apply bg-[#21262D] text-[#C9D1D9];
+  @apply border border-[#30363D];
+  @apply hover:bg-[#30363D] hover:border-[#8B949E];
+  @apply transition-all duration-200;
+  @apply transform hover:-translate-y-0.5;
+}
+
+/* GitHub-like code blocks */
+.dark pre {
+  @apply bg-[#161B22] border border-[#30363D];
+  @apply p-4 rounded;
+  @apply transition-all duration-300;
+}
+
+.dark code {
+  @apply text-[#C9D1D9];
+  @apply font-mono;
+}
+
+/* GitHub-like input focus */
+.dark input:focus, .dark textarea:focus {
+  @apply outline-none ring-2 ring-[#1F6FEB]/30;
+  @apply border-[#1F6FEB];
+  @apply transition-all duration-200;
+}
+
+/* Fade in animation for content */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dark .fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Hover lift effect */
+.dark .hover-lift {
+  @apply transition-all duration-300;
+  @apply transform hover:-translate-y-1;
+  @apply hover:shadow-lg;
+}
+
+/* Smooth color transition */
+.dark * {
+  @apply transition-colors duration-200;
+}
+
+/* GitHub-like link hover effect */
+.dark .github-link {
+  @apply text-[#58A6FF] no-underline;
+  @apply hover:text-[#79B8FF];
+  @apply transition-colors duration-200;
+}
+
+/* GitHub-like badge */
+.dark .github-badge {
+  @apply bg-[#21262D] text-[#C9D1D9];
+  @apply border border-[#30363D];
+  @apply px-2 py-1 rounded-full text-sm;
+  @apply transition-all duration-200;
+  @apply hover:bg-[#30363D];
+}
