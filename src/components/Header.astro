@@ -2,42 +2,41 @@
 import Container from "@components/Container.astro";
 import Link from "@components/Link.astro";
 import { SITE } from "@consts";
+import ParticleLogo from "./ParticleLogo";
 ---
 
-<header>
+<header class="animate-fade-in">
   <Container>
     <div class="flex flex-wrap gap-y-2 justify-between">
-      <Link href="/" underline={false}>
-        <div class="font-semibold">
-          {SITE.NAME}
-        </div>
+      <Link href="/" underline={false} class="hover-lift relative h-8 w-48">
+        <ParticleLogo client:visible />
       </Link>
-      <nav class="flex gap-1">
-        <Link href="/#skills">
+      <nav class="flex gap-1 stagger-animate">
+        <Link href="/#skills" class="hover-lift">
           skills
         </Link>
         <span>
           {`/`}
         </span>
-        <Link href="/#education">
+        <Link href="/#education" class="hover-lift">
           education
         </Link>
         <span>
           {`/`}
         </span>
-        <Link href="/#certifications">
+        <Link href="/#certifications" class="hover-lift">
           certifications
         </Link>
         <span>
           {`/`}
         </span>
-        <Link href="/work">
+        <Link href="/work" class="hover-lift">
           work
         </Link>
         <span>
           {`/`}
         </span>
-        <Link href="/projects">
+        <Link href="/projects" class="hover-lift">
           projects
         </Link>
       </nav>

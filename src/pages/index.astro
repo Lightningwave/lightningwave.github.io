@@ -39,30 +39,30 @@ const skillsByCategory = skills.reduce((acc, skill) => {
 
 <PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION}>
   <Container>
-    <h4 class="animate font-semibold text-black dark:text-white">
+    <h4 class="animate-fade-up font-semibold text-black dark:text-white">
       Hi, I'm Van <span class="text-xl">👋🏻</span> 
     </h4>
     <div class="space-y-16">
-      <section>
+      <section class="animate-fade-up">
         <article class="space-y-4">
-          <p class="animate">
+          <p>
             I am a software developer passionate about creating efficient and user-friendly applications.
             This portfolio showcases my projects and professional experience.
           </p>
         </article>
       </section>
 
-      <section id="skills" class="animate space-y-6">
+      <section id="skills" class="animate-fade-up space-y-6">
         <h5 class="font-semibold text-black dark:text-white">
           Skills & Technologies
         </h5>
-        <div class="space-y-6">
+        <div class="space-y-6 stagger-animate">
           {Object.entries(skillsByCategory).map(([category, skills]) => (
             <div>
               <h6 class="text-sm font-medium opacity-75 mb-2">{category}</h6>
               <div class="flex flex-wrap gap-2">
                 {skills.map(skill => (
-                  <span class="px-3 py-1 bg-black/5 dark:bg-white/5 rounded-full text-sm">
+                  <span class="px-3 py-1 bg-black/5 dark:bg-white/5 rounded-full text-sm hover-lift">
                     {skill.data.name} <span class="opacity-75">({skill.data.level})</span>
                   </span>
                 ))}
@@ -72,13 +72,13 @@ const skillsByCategory = skills.reduce((acc, skill) => {
         </div>
       </section>
 
-      <section id="education" class="animate space-y-6">
+      <section id="education" class="animate-fade-up space-y-6">
         <h5 class="font-semibold text-black dark:text-white">
           Education
         </h5>
-        <ul class="flex flex-col space-y-4">
+        <ul class="flex flex-col space-y-4 stagger-animate">
           {education.map(entry => (
-            <li>
+            <li class="hover-lift">
               <div class="text-sm opacity-75">
                 {dateRange(entry.data.startDate, entry.data.endDate)}
               </div>
@@ -98,13 +98,13 @@ const skillsByCategory = skills.reduce((acc, skill) => {
         </ul>
       </section>
 
-      <section id="certifications" class="animate space-y-6">
+      <section id="certifications" class="animate-fade-up space-y-6">
         <h5 class="font-semibold text-black dark:text-white">
           Certifications
         </h5>
-        <ul class="flex flex-col space-y-4">
+        <ul class="flex flex-col space-y-4 stagger-animate">
           {certifications.map(cert => (
-            <li>
+            <li class="hover-lift">
               <div class="text-sm opacity-75">
                 {new Date(cert.data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}
               </div>
@@ -116,7 +116,7 @@ const skillsByCategory = skills.reduce((acc, skill) => {
               </div>
               {cert.data.link && (
                 <div class="text-sm mt-1">
-                  <Link href={cert.data.link} external>
+                  <Link href={cert.data.link} external class="hover-lift">
                     View Certificate
                   </Link>
                 </div>
@@ -126,18 +126,18 @@ const skillsByCategory = skills.reduce((acc, skill) => {
         </ul>
       </section>
 
-      <section class="animate space-y-6">
+      <section class="animate-fade-up space-y-6">
         <div class="flex flex-wrap gap-y-2 items-center justify-between">
           <h5 class="font-semibold text-black dark:text-white">
             Work Experience
           </h5>
-          <Link href="/work">
+          <Link href="/work" class="hover-lift">
             See all work
           </Link>
         </div>
-        <ul class="flex flex-col space-y-4">
+        <ul class="flex flex-col space-y-4 stagger-animate">
           {work.map(entry => (
-            <li>
+            <li class="hover-lift">
               <div class="text-sm opacity-75">
                 {dateRange(entry.data.dateStart, entry.data.dateEnd)}
               </div>
@@ -155,25 +155,25 @@ const skillsByCategory = skills.reduce((acc, skill) => {
         </ul>
       </section>
 
-      <section class="animate space-y-6">
+      <section class="animate-fade-up space-y-6">
         <div class="flex flex-wrap gap-y-2 items-center justify-between">
           <h5 class="font-semibold text-black dark:text-white">
             Recent projects
           </h5>
-          <Link href="/projects">
+          <Link href="/projects" class="hover-lift">
             See all projects
           </Link>
         </div>
-        <ul class="flex flex-col gap-4">
+        <ul class="flex flex-col gap-4 stagger-animate">
           {projects.map(project => (
-            <li>
+            <li class="hover-scale">
               <ArrowCard entry={project} />
             </li>
           ))}
         </ul>
       </section>
 
-      <section class="animate space-y-4">
+      <section class="animate-fade-up space-y-4">
         <h5 class="font-semibold text-black dark:text-white">
           Let's Connect
         </h5>
@@ -183,17 +183,17 @@ const skillsByCategory = skills.reduce((acc, skill) => {
             reach out on social media or send me an email.
           </p>
         </article>
-        <ul class="flex flex-wrap gap-2">
+        <ul class="flex flex-wrap gap-2 stagger-animate">
           {SOCIALS.map(SOCIAL => (
             <li class="flex gap-x-2 text-nowrap">
-              <Link href={SOCIAL.HREF} external aria-label={`${SITE.NAME} on ${SOCIAL.NAME}`}>
+              <Link href={SOCIAL.HREF} external aria-label={`${SITE.NAME} on ${SOCIAL.NAME}`} class="hover-lift">
                 {SOCIAL.NAME}
               </Link>
               {"/"}
             </li>
           ))}
           <li class="line-clamp-1">
-            <Link href={`mailto:${SITE.EMAIL}`} aria-label={`Email ${SITE.NAME}`}>
+            <Link href={`mailto:${SITE.EMAIL}`} aria-label={`Email ${SITE.NAME}`} class="hover-lift">
               {SITE.EMAIL}
             </Link>
           </li>
