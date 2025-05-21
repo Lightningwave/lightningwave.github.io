@@ -5,6 +5,7 @@
 html {
   overflow-y: scroll;
   color-scheme: light;
+  scroll-behavior: smooth;
 }
 
 html.dark {
@@ -25,10 +26,16 @@ body {
 
 header {
   @apply fixed top-0 left-0 right-0 z-50 py-5;
-  @apply bg-stone-100/75 dark:bg-[#010409];
-  @apply backdrop-blur-sm saturate-200;
-  @apply border-b border-black/10 dark:border-[#30363D];
-  @apply shadow-[0_1px_0_0_rgba(255,255,255,0.1)];
+  @apply bg-stone-100 dark:bg-[#0D1117];
+  @apply backdrop-blur-sm saturate-100;
+  @apply border-b border-transparent;
+  @apply transition-all duration-300 ease-in-out;
+}
+
+header.scrolled {
+  @apply bg-stone-100 dark:bg-[#0D1117];
+  @apply border-black/5 dark:border-[#30363D]/50;
+  @apply shadow-lg shadow-black/5 dark:shadow-black/20;
 }
 
 main {
@@ -190,4 +197,106 @@ html.scrolled #back-to-top {
   @apply px-2 py-1 rounded-full text-sm;
   @apply transition-all duration-200;
   @apply hover:bg-[#30363D];
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Animation classes */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-fade-up {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.5s ease-out forwards;
+}
+
+/* Staggered animations */
+.stagger-animate > * {
+  opacity: 0;
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.stagger-animate > *:nth-child(1) { animation-delay: 0.1s; }
+.stagger-animate > *:nth-child(2) { animation-delay: 0.2s; }
+.stagger-animate > *:nth-child(3) { animation-delay: 0.3s; }
+.stagger-animate > *:nth-child(4) { animation-delay: 0.4s; }
+.stagger-animate > *:nth-child(5) { animation-delay: 0.5s; }
+
+/* Hover animations */
+.hover-lift {
+  transition: transform 0.2s ease-out;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+}
+
+.hover-scale {
+  transition: transform 0.2s ease-out;
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+}
+
+/* Page transition animations */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 2;
+}
+
+.dark::view-transition-old(root) {
+  z-index: 2;
+}
+
+.dark::view-transition-new(root) {
+  z-index: 1;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
 }

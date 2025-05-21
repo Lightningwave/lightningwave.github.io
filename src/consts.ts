@@ -1,7 +1,7 @@
 import type { Site, Metadata, Socials, Skill, Education, Certification } from "@types";
 
 export const SITE: Site = {
-  NAME: "Van Nguyen",
+  NAME: "lightningwave",
   EMAIL: "vannguyen@gmail.com",
   NUM_WORKS_ON_HOMEPAGE: 2,
   NUM_PROJECTS_ON_HOMEPAGE: 1,

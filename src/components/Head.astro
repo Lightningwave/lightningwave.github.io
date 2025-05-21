@@ -122,10 +122,11 @@ const { title, description, image = "/favicon-light.svg" } = Astro.props;
   }
 
   function onScroll() {
+    const header = document.querySelector('header');
     if (window.scrollY > 0) {
-      document.documentElement.classList.add("scrolled");
+      header?.classList.add("scrolled");
     } else {
-      document.documentElement.classList.remove("scrolled");
+      header?.classList.remove("scrolled");
     }
   }
 
