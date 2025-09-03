@@ -3,7 +3,7 @@ title: SafeSplit
 description: A secure file sharing and recovery system built with Go (Gin) backend and React frontend.
 date: 2024-03-20
 draft: false
-demoURL: https://safesplit.xyz
+demoURL: https://www.youtube.com/watch?v=0SLUr2ZKELU
 repoURL: https://github.com/Lightningwave/safesplit
 ---
 
