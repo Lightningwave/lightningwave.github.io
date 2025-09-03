@@ -4,7 +4,7 @@ My personal portfolio website showcasing my projects and professional experience
 
 ## 🔗 Live Site
 
-Visit my portfolio at [vannguyen.xyz](https://vannguyen.xyz)
+Visit my portfolio at [lightningwave.github.io](https://lightningwave.github.io/)
 
 ## 🚀 Featured Project: SafeSplit
 
@@ -29,7 +29,7 @@ SafeSplit is a secure file sharing and recovery system that provides:
 - **Styling**: [Tailwind CSS](https://tailwindcss.com) - Utility-first CSS
 - **Typography**: Inter & Lora fonts
 - **Deployment**: GitHub Pages
-- **Performance**: 100/100 Lighthouse score
+
 
 ## 💻 Development
 
