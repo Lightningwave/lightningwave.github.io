@@ -1,5 +1,5 @@
 ---
-name: "Nmap"
-level: "Advanced"
+name: "Burp Suite"
+level: "Intermediate"
 category: "Cybersecurity Tools"
 --- 

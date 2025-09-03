@@ -1,5 +1,5 @@
 ---
 name: "JavaScript"
-level: "Advanced"
+level: "Beginner"
 category: "Programming Languages"
 --- 
