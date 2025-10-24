@@ -9,7 +9,7 @@ repoURL: https://github.com/Lightningwave/hashlab
 
 ## Overview
 
-<img src="/images/hashlab.png" alt="HashLab Logo" width="200" height="auto" style="margin-bottom: 1rem;">
+<img src="/images/hashlab-logo.png" alt="HashLab Logo" width="200" height="auto" style="margin-bottom: 1rem;">
 
 HashLab is a comprehensive client-side cryptographic toolkit that provides encryption, hashing, encoding/decoding, and steganography capabilities. Built with React and Rust/WebAssembly, all operations run locally in your browser ensuring complete privacy - no data ever leaves your device.
 
