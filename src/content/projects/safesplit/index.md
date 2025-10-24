@@ -8,7 +8,7 @@ repoURL: https://github.com/Lightningwave/safesplit
 ---
 
 ## Overview
-
+![Safesplit Logo](/images/safesplit.png)
 SafeSplit is a secure file sharing and recovery system that provides end-to-end encryption and advanced file management capabilities. Built with modern technologies, it ensures your files are protected while being easily accessible.
 
 ## Key Features
