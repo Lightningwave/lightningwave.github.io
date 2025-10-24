@@ -61,10 +61,43 @@ SafeSplit is a secure file sharing and recovery system that provides end-to-end 
 - State management with hooks
 - Modern UI/UX patterns
 
+## Project Structure
+
+```
+safesplit/
+├── backend/                 # Go backend application
+│   ├── cmd/                # Application entry points
+│   ├── internal/           # Private application code
+│   │   ├── handlers/       # HTTP handlers
+│   │   ├── models/         # Data models
+│   │   ├── services/       # Business logic
+│   │   └── middleware/     # HTTP middleware
+│   ├── pkg/                # Public library code
+│   └── go.mod
+│
+├── frontend/               # React frontend application
+│   ├── src/
+│   │   ├── components/     # Reusable UI components
+│   │   ├── pages/          # Page components
+│   │   ├── services/       # API services
+│   │   └── utils/          # Utility functions
+│   └── package.json
+│
+└── docs/                   # Documentation
+```
+
 ## Security Features
 
 - **Complete Privacy** - End-to-end encryption ensures data security
 - **Key Distribution** - Shamir's Secret Sharing for secure key management
 - **File Integrity** - Reed-Solomon codes prevent data corruption
 - **Authentication** - Multi-factor authentication system
-- **Session Security** - JWT-based secure session management 
+- **Session Security** - JWT-based secure session management
+
+## Technologies Used
+
+- **Backend**: Go, Gin, GORM, MySQL, JWT
+- **Frontend**: React, Tailwind CSS, JavaScript
+- **Security**: AES Encryption, Shamir's Secret Sharing, Reed-Solomon codes
+- **Infrastructure**: Amazon S3, PayPal Braintree
+- **Tools**: Git, Docker, CI/CD 
