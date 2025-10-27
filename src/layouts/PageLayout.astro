@@ -18,10 +18,60 @@ const { title, description } = Astro.props;
     <Head title={`${title} | ${SITE.NAME}`} description={description} />
   </head>
   <body>
+    <div id="cursor-halo"></div>
     <Header />
     <main>
       <slot />
     </main>
     <Footer />
   </body>
+
+  <script>
+    const cursorHalo = document.getElementById('cursor-halo');
+    let mouseX = 0;
+    let mouseY = 0;
+    let haloX = 0;
+    let haloY = 0;
+    let size = 50;
+    let prevX = 0;
+    let prevY = 0;
+
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      
+      // Calculate distance moved to determine speed
+      const dx = mouseX - prevX;
+      const dy = mouseY - prevY;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+      
+      // Adjust size based on movement speed
+      const targetSize = 50 + Math.min(distance, 150);
+      size = size * 0.9 + targetSize * 0.1;
+      
+      cursorHalo.classList.add('active');
+      
+      prevX = mouseX;
+      prevY = mouseY;
+    });
+
+    function animate() {
+      haloX += (mouseX - haloX) * 0.1;
+      haloY += (mouseY - haloY) * 0.1;
+      size += (50 - size) * 0.05; // Gradually return to base size
+      
+      cursorHalo.style.left = haloX + 'px';
+      cursorHalo.style.top = haloY + 'px';
+      cursorHalo.style.width = size + 'px';
+      cursorHalo.style.height = size + 'px';
+      
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+
+    document.addEventListener('mouseleave', () => {
+      cursorHalo.classList.remove('active');
+    });
+  </script>
 </html>
