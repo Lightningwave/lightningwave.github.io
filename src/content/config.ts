@@ -50,6 +50,8 @@ const certifications = defineCollection({
     issuer: z.string(),
     date: z.coerce.date(),
     link: z.string().optional(),
+    status: z.string().optional(),
+    description: z.string().optional(),
   }),
 });
 

@@ -46,8 +46,10 @@ const skillsByCategory = skills.reduce((acc, skill) => {
       <section class="animate-fade-up">
         <article class="space-y-4">
           <p>
-            I am a software developer passionate about creating efficient and user-friendly applications.
-            This portfolio showcases my projects and professional experience.
+            I'm a recent Computer Science graduate with a Bachelor's degree in Digital Systems Security from the University of Wollongong and a Diploma in Information Technology from the Singapore Institute of Management. Passionate about cybersecurity and software development, I'm driven to build secure systems and protect digital environments from modern threats.
+          </p>
+          <p>
+            My academic journey has given me a solid foundation in secure software design, network defense, and vulnerability assessment. Through hands-on projects, I've explored cryptographic systems, web application security, and threat mitigation, sparking my curiosity about how systems work and how to make them more resilient.
           </p>
         </article>
       </section>
@@ -105,9 +107,21 @@ const skillsByCategory = skills.reduce((acc, skill) => {
         <ul class="flex flex-col space-y-4 stagger-animate">
           {certifications.map(cert => (
             <li class="hover-lift">
-              <div class="text-sm opacity-75">
-                {new Date(cert.data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}
+              <div class="flex gap-2 items-center mb-1 flex-wrap">
+                <div class="text-sm opacity-75">
+                  {new Date(cert.data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}
+                </div>
+                {cert.data.status && cert.data.status.includes("In Progress") && (
+                  <span class="px-2 py-0.5 text-xs font-semibold rounded-full bg-blue-500/20 text-blue-600 dark:bg-blue-500/30 dark:text-blue-400">
+                    In Progress
+                  </span>
+                )}
               </div>
+              {cert.data.status && cert.data.status.includes("Expected completion") && (
+                <div class="text-xs opacity-70 italic">
+                  Expected completion: End of 2025
+                </div>
+              )}
               <div class="font-semibold text-black dark:text-white">
                 {cert.data.name}
               </div>
@@ -119,6 +133,11 @@ const skillsByCategory = skills.reduce((acc, skill) => {
                   <Link href={cert.data.link} external class="hover-lift">
                     View Certificate
                   </Link>
+                </div>
+              )}
+              {cert.data.description && (
+                <div class="text-sm mt-1 opacity-90">
+                  {cert.data.description}
                 </div>
               )}
             </li>

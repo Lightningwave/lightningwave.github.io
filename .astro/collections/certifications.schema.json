@@ -29,6 +29,12 @@
         "link": {
           "type": "string"
         },
+        "status": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
         "$schema": {
           "type": "string"
         }
