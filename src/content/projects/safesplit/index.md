@@ -9,39 +9,95 @@ repoURL: https://github.com/Lightningwave/safesplit
 
 ## Overview
 
+<img src="/images/safesplit-logo.png" alt="SafeSplit Logo" width="200" height="auto" style="margin-bottom: 1rem;">
+
 SafeSplit is a secure file sharing and recovery system that provides end-to-end encryption and advanced file management capabilities. Built with modern technologies, it ensures your files are protected while being easily accessible.
 
 ## Key Features
 
-- 🔒 Secure file sharing with end-to-end encryption
-- 📱 Mobile compatibility
-- 🔑 JWT Authentication with password hashing
-- 🔐 AES Encryption for files
-- 🧩 Shamir secret sharing for encrypted key
-- 📦 Reed-Solomon code for file splitting
-- 🗜️ Zstd Compression
-- ☁️ Distributed storage via Amazon S3 API
-- 🔍 Two-factor authentication (2FA)
-- 💳 Payment integration with PayPal Braintree
+### 🔒 Security & Encryption
+- **End-to-end encryption** using AES
+- **Shamir's Secret Sharing** for encrypted key distribution
+- **Reed-Solomon codes** for file integrity protection
+- **Two-factor authentication (2FA)**
+- **JWT Authentication** with secure password hashing
+
+### 📁 File Management
+- **Secure file sharing** with advanced access controls
+- **File splitting** with Reed-Solomon error correction
+- **Zstd Compression** for efficient storage
+- **Distributed storage** via Amazon S3 API
+- **Mobile compatibility** for cross-platform access
+
+### 💳 Business Features
+- **Payment integration** with PayPal Braintree
+- **User management** and access controls
+- **Session management** with JWT tokens
 
 ## Technical Stack
 
 ### Backend
-- Go 1.16+
-- Gin Web Framework
-- GORM
-- MySQL
-- JWT Authentication
+- **Go 1.16+** - High-performance server language
+- **Gin Web Framework** - Fast HTTP web framework
+- **GORM** - Object-relational mapping
+- **MySQL** - Reliable database storage
+- **JWT Authentication** - Secure session management
 
 ### Frontend
-- React
-- Tailwind CSS
+- **React** - Modern UI framework
+- **Tailwind CSS** - Utility-first styling
+
+## Architecture
+
+### Backend (Go/Gin)
+- RESTful API design
+- Microservices architecture
+- Secure file processing pipeline
+- Database abstraction layer
+
+### Frontend (React)
+- Component-based architecture
+- Responsive design
+- State management with hooks
+- Modern UI/UX patterns
+
+## Project Structure
+
+```
+safesplit/
+├── backend/                 # Go backend application
+│   ├── cmd/                # Application entry points
+│   ├── internal/           # Private application code
+│   │   ├── handlers/       # HTTP handlers
+│   │   ├── models/         # Data models
+│   │   ├── services/       # Business logic
+│   │   └── middleware/     # HTTP middleware
+│   ├── pkg/                # Public library code
+│   └── go.mod
+│
+├── frontend/               # React frontend application
+│   ├── src/
+│   │   ├── components/     # Reusable UI components
+│   │   ├── pages/          # Page components
+│   │   ├── services/       # API services
+│   │   └── utils/          # Utility functions
+│   └── package.json
+│
+└── docs/                   # Documentation
+```
 
 ## Security Features
 
-- End-to-end encryption using AES
-- Secure key distribution with Shamir's Secret Sharing
-- File integrity protection with Reed-Solomon codes
-- Two-factor authentication
-- Secure password hashing
-- JWT-based session management 
+- **Complete Privacy** - End-to-end encryption ensures data security
+- **Key Distribution** - Shamir's Secret Sharing for secure key management
+- **File Integrity** - Reed-Solomon codes prevent data corruption
+- **Authentication** - Multi-factor authentication system
+- **Session Security** - JWT-based secure session management
+
+## Technologies Used
+
+- **Backend**: Go, Gin, GORM, MySQL, JWT
+- **Frontend**: React, Tailwind CSS, JavaScript
+- **Security**: AES Encryption, Shamir's Secret Sharing, Reed-Solomon codes
+- **Infrastructure**: Amazon S3, PayPal Braintree
+- **Tools**: Git, Docker, CI/CD 

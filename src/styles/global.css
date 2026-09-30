@@ -300,3 +300,20 @@ html.scrolled #back-to-top {
 html {
   scroll-behavior: smooth;
 }
+
+/* Cursor follower */
+#cursor-halo {
+  position: fixed;
+  border-radius: 50%;
+  border: 3px solid rgba(59, 130, 246, 0.8);
+  background: transparent;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+#cursor-halo.active {
+  opacity: 1;
+}

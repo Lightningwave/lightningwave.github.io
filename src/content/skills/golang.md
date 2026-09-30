@@ -1,5 +1,5 @@
 ---
 name: "Golang"
-level: "Advanced"
+level: "Beginner"
 category: "Programming Languages"
 --- 

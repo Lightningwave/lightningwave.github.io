@@ -1,5 +1,5 @@
 ---
-school: "Singapore Institute of Management (SIM)"
+school: "Singapore Institute of Management"
 degree: "Diploma"
 field: "Information Technology"
 startDate: "2021-01"
